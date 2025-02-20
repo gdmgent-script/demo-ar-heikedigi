@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>scanner</title>
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <style>
+        .top-right-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff4c4c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
 </head>
-<style>
-    .bottom-right-button {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        padding: 10px 20px;
-        font-size: 16px;
-        background-color: #476b9d;
-        color: white;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-</style>
 <body>
-    <button class="bottom-right-button" onclick="window.location.href = 'index.html';">Terug naar de code</button>
+    <button class="top-right-button" onclick="window.location.href='index.html'">Terug naar code</button>
     <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3 ;">
         <a-marker type="barcode" value="0"> 
             <a-image 
@@ -54,15 +54,55 @@
             </a-image>
         </a-marker>
 
-<a-marker  type="barcode" value="3"> 
-    <a-image 
-        src="pics/vierkant4.jpg" 
-        position="0 0 0" 
-        rotation="-90 0 0" 
-        width="1.5" 
-        height="1.5">
-    </a-image>
-</a-marker>
-</a-scene>
+        <a-marker  type="barcode" value="3"> 
+            <a-image 
+                src="pics/vierkant4.jpg" 
+                position="0 0 0" 
+                rotation="-90 0 0" 
+                width="1.5" 
+                height="1.5">
+            </a-image>
+        </a-marker>
+        <a-marker  type="barcode" value="4"> 
+            <a-image 
+                src="pics/vierkant5.jpg" 
+                position="0 0 0" 
+                rotation="-90 0 0" 
+                width="1.5" 
+                height="1.5">
+            </a-image>
+        </a-marker>
+        <a-marker  type="barcode" value="5"> 
+            <a-image 
+                src="pics/vierkant6.jpg" 
+                position="0 0 0" 
+                rotation="-90 0 0" 
+                width="1.5" 
+                height="1.5">
+            </a-image>
+        </a-marker>
+
+        <a-marker  type="barcode" value="6"> 
+            <a-image 
+                src="pics/vierkant7.jpg" 
+                position="0 0 0" 
+                rotation="-90 0 0" 
+                width="1.5" 
+                height="1.5">
+            </a-image>
+        </a-marker>
+
+        <a-marker  type="barcode" value="7"> 
+            <a-image 
+                src="pics/vierkant8.jpg" 
+                position="0 0 0" 
+                rotation="-90 0 0" 
+                width="1.5" 
+                height="1.5">
+            </a-image>
+        </a-marker>
+
+        <a-entity camera></a-entity>
+    </a-scene>
 </body>
 </html>
