@@ -1,93 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <title>Escape Room Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #222;
+            color: white;
+            background-image: url('pics/background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #response {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .bottom-right-button {
+            position: fixed;
+            bottom: 100px;
+            right: 200px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #476b9d;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .submit-button {
+            background-color: #476b9d;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3 ;">
-        <a-marker type="barcode" value="0"> 
-            <a-image 
-                src="vierkant1.jpg" 
-                position="0 0 0" 
-                rotation="-90 0 0" 
-                width="2" 
-                height="2">
-            </a-image>
-        </a-marker>
-        
-        <a-marker type="barcode" value="1"> 
-            <a-image 
-                src="vierkant2.jpg" 
-                position="0 0 0" 
-                rotation="-90 0 0" 
-                width="2" 
-                height="2">
-            </a-image>
-        </a-marker>
+    <h1>Voer de code in om verder te gaan</h1>
+    <input type="text" id="codeInput" placeholder="Voer code in...">
+    <button class="submit-button" onclick="checkCode()">Indienen</button>
+    <div id="response"></div>
+    <button class="bottom-right-button" onclick="window.location.href='scanner.html'">Ga naar scanner</button>
 
-        <a-marker type="barcode" value="2"> 
-            <a-image 
-                src="vierkant3.jpg" 
-                position="0 0 0" 
-                rotation="-90 0 0" 
-                width="2" 
-                height="2">
-            </a-image>
-        </a-marker>
+    <script>
+        const codes = [
+            { value: "AI123", response: "Toegang verleend! De deur gaat open." },
+            { value: "HACK42", response: "Firewall omzeild! Je krijgt toegang tot het systeem." },
+            { value: "OVERRIDE99", response: "Noodstop geactiveerd! De AI schakelt uit." }
+        ];
 
-        <a-marker  type="barcode" value="3"> 
-            <a-image 
-                src="vierkant4.jpg" 
-                position="0 0 0" 
-                rotation="-90 0 0" 
-                width="2" 
-                height="2">
-            </a-image>
-        </a-marker>
-        <a-marker  type="barcode" value="4"> 
-            <a-image 
-                src="vierkant5.jpg" 
-                position="0 0 0" 
-                rotation="-90 0 0" 
-                width="2" 
-                height="2">
-            </a-image>
-        </a-marker>
-        <a-marker  type="barcode" value="5"> 
-            <a-image 
-                src="vierkant6.jpg" 
-                position="0 0 0" 
-                rotation="-90 0 0" 
-                width="2" 
-                height="2">
-            </a-image>
-        </a-marker>
-
-        <a-marker  type="barcode" value="6"> 
-            <a-image 
-                src="vierkant7.jpg" 
-                position="0 0 0" 
-                rotation="-90 0 0" 
-                width="2" 
-                height="2">
-            </a-image>
-        </a-marker>
-
-        <a-marker  type="barcode" value="7"> 
-            <a-image 
-                src="vierkant8.jpg" 
-                position="0 0 0" 
-                rotation="-90 0 0" 
-                width="2" 
-                height="2">
-            </a-image>
-        </a-marker>
-
-        <a-entity camera></a-entity>
-    </a-scene>
+        function checkCode() {
+            const input = document.getElementById("codeInput").value;
+            const responseDiv = document.getElementById("response");
+            
+            const codeMatch = codes.find(code => code.value === input);
+            
+            if (codeMatch) {
+                responseDiv.textContent = codeMatch.response;
+                responseDiv.style.color = "lightgreen";
+            } else {
+                responseDiv.textContent = "Foutieve code! Probeer opnieuw.";
+                responseDiv.style.color = "red";
+            }
+        }
+    </script>
 </body>
 </html>
