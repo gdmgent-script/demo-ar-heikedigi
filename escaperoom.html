@@ -20,7 +20,6 @@
             text-align: center;
             padding: 20px;
         }
-        
         input, button {
             margin: 10px;
             padding: 10px;
@@ -84,14 +83,18 @@
             
             if (codeMatch) {
     responseDiv.textContent = codeMatch.response;
-    responseDiv.style.color = "lightgreen";
+    responseDiv.style.color = "white"; // Tekst wit
     responseDiv.style.fontWeight = "bold";
-    responseDiv.style.textShadow = "1px 1px 2px white"; // Witte rand
+    responseDiv.style.backgroundColor = "#4ec626"; // Groen blokje
+    responseDiv.style.padding = "10px"; // Ruimte binnen het blokje
+    responseDiv.style.borderRadius = "5px"; // Afgeronde hoeken
 } else {
     responseDiv.textContent = "Foutieve code! Probeer opnieuw.";
-    responseDiv.style.color = "red";
+    responseDiv.style.color = "white"; // Tekst wit
     responseDiv.style.fontWeight = "bold";
-    responseDiv.style.textShadow = "1px 1px 2px white"; // Witte rand
+    responseDiv.style.backgroundColor = "red"; // Rood blokje
+    responseDiv.style.padding = "10px"; // Ruimte binnen het blokje
+    responseDiv.style.borderRadius = "5px"; // Afgeronde hoeken
 }
         }
     </script>
