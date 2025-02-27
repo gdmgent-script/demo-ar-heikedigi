@@ -83,12 +83,16 @@
             const codeMatch = codes.find(code => code.value === input);
             
             if (codeMatch) {
-                responseDiv.textContent = codeMatch.response;
-                responseDiv.style.color = "lightgreen";
-            } else {
-                responseDiv.textContent = "Foutieve code! Probeer opnieuw.";
-                responseDiv.style.color = "red";
-            }
+    responseDiv.textContent = codeMatch.response;
+    responseDiv.style.color = "lightgreen";
+    responseDiv.style.fontWeight = "bold";
+    responseDiv.style.textShadow = "1px 1px 2px white"; // Witte rand
+} else {
+    responseDiv.textContent = "Foutieve code! Probeer opnieuw.";
+    responseDiv.style.color = "red";
+    responseDiv.style.fontWeight = "bold";
+    responseDiv.style.textShadow = "1px 1px 2px white"; // Witte rand
+}
         }
     </script>
 </body>
