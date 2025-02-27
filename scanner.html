@@ -20,6 +20,7 @@
         border-radius: 5px;
         z-index: 9999; /* Zorgt ervoor dat de knop bovenop ligt */
     }
+
         a-scene {
         position: absolute;
         top: 0;
@@ -31,7 +32,7 @@
     </style>
 </head>
 <body>
-    <button class="top-right-button" onclick="window.location.href='./escaperoom/index.html'">Terug naar code</button>
+    <button class="top-right-button" onclick="window.location.href='./index.html'">Terug naar code</button>
     <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
         <a-marker type="barcode" value="0"> 
             <a-image 
