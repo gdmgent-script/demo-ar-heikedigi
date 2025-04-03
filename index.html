@@ -70,9 +70,35 @@
 
     <script>
         const codes = [
-            { value: "6:0612", response: "De eerste puzzel opgelost, op naar meer." },
-            { value: "HACK42", response: "Firewall omzeild! Je krijgt toegang tot het systeem." },
-            { value: "OVERRIDE99", response: "Noodstop geactiveerd! De AI schakelt uit." }
+            // teaser code
+            { value: "6:0612", response: "De eerste puzzel opgelost, op naar meer." }, 
+            
+            // stoel nemen om aan de floppy disk hoog op een kast te raken in de garage
+            { value: "stoel", response: "Draai kaart #10 om en houd de floppy disk het hele spel bij." }, 
+
+            // code die uit de digitale klok komt
+            { value: "8530", response: "Lees de volgende kaart." }, 
+
+            // code die op de kast staat in het archief
+            { value: "2783", response: "Draai kaart #16 om." }, 
+
+            // code die uit de html code komt van de qr-code op de vloer van de wc
+            { value: "41395", response: "Draai kaart #18 om." }, 
+            
+            //  juiste code uit de automaat sudoku
+            { value: "a1", response: "Je hebt de wifi-code vrijgespeeld, schrijf deze op dit kan handig zijn." }, 
+
+             // Foutieve codes met specifieke meldingen
+            { value: "d3", response: "Er valt een grote rode knop uit de automaat, je bent veel te nieuwsgierig en drukt erop. De wifi valt uit in het hele gebouw.", isWrong: true },
+            { value: "c3", response: "Deze donut is lekker maar helpt je niet verder, probeer opnieuw.", isWrong: true },
+            { value: "a3", response: "De robot valt op de grond en roept 'laat mij met rust ik moet nog opladen' en hij loopt rustig weg.", isWrong: true },
+            { value: "c2", response: "Het blikje cola valt uit de machine en sproeit de hele kamer vol plakkende cola.", isWrong: true },
+            
+            // code die op de sleutelhanger staat
+            { value: "523974", response: "Deze code kan inderdaad gebruikt worden om de kluis te openen, draai kaart #23 om en bekijk de inhoud van de kluis." },
+       
+            // code die uit het briefje komt van in de automaat met het wifi wachtwoord
+            { value: "wF9B#74pZ!m8JkD2xL", response: "Draai kaart #18 om." }, 
         ];
 
         function checkCode() {
@@ -82,21 +108,53 @@
             const codeMatch = codes.find(code => code.value === input);
             
             if (codeMatch) {
-    responseDiv.textContent = codeMatch.response;
-    responseDiv.style.color = "white"; // Tekst wit
-    responseDiv.style.fontWeight = "bold";
-    responseDiv.style.backgroundColor = "#4ec626"; // Groen blokje
-    responseDiv.style.padding = "10px"; // Ruimte binnen het blokje
-    responseDiv.style.borderRadius = "5px"; // Afgeronde hoeken
+            if (codeMatch.isWrong) {
+                // Specific response for wrong codes
+                responseDiv.textContent = codeMatch.response;
+                responseDiv.style.color = "white"; // Tekst wit
+                responseDiv.style.fontWeight = "bold";
+                responseDiv.style.backgroundColor = "orange"; // Oranje blokje voor foutieve codes met specifieke meldingen
+                responseDiv.style.padding = "10px"; // Ruimte binnen het blokje
+                responseDiv.style.borderRadius = "5px"; // Afgeronde hoeken
+            } else {
+                // Correct code response
+                responseDiv.textContent = codeMatch.response;
+                responseDiv.style.color = "white"; // Tekst wit
+                responseDiv.style.fontWeight = "bold";
+                responseDiv.style.backgroundColor = "#4ec626"; // Groen blokje
+                responseDiv.style.padding = "10px"; // Ruimte binnen het blokje
+                responseDiv.style.borderRadius = "5px"; // Afgeronde hoeken
+
+                     // Voeg de afbeelding toe onder de tekst als de code correct is
+                     if (input === "41395") {  // Controleer of de code overeenkomt met de juiste code voor kaart 18
+                        const img = document.createElement('img');
+                        img.src = "pics/meeting-alert-agenda.png";  // Zorg ervoor dat de afbeelding op de juiste locatie staat
+                        img.alt = "Meeting alert agenda, meeting room 3";
+                        img.style.marginTop = "20px"; // Voeg wat ruimte boven de afbeelding toe
+                        img.style.maxWidth = "100%";  // Zorg ervoor dat de afbeelding niet te groot wordt
+                        responseDiv.appendChild(img);
+                    }
+                     // Voeg de afbeelding toe onder de tekst als de code correct is
+                     if (input === "a1") {  // Controleer of de code overeenkomt met de juiste code voor kaart 25
+                        const img = document.createElement('img');
+                        img.src = "pics/wifi-wachtwoord.png";  // Zorg ervoor dat de afbeelding op de juiste locatie staat
+                        img.alt = "Het wifi wachtwoord is wF9B#74pZ!m8JkD2xL";
+                        img.style.marginTop = "20px"; // Voeg wat ruimte boven de afbeelding toe
+                        img.style.maxWidth = "100%";  // Zorg ervoor dat de afbeelding niet te groot wordt
+                        responseDiv.appendChild(img);
+                    }
+                }
 } else {
-    responseDiv.textContent = "Foutieve code! Probeer opnieuw.";
+    // Generic error message for completely invalid codes
+    responseDiv.textContent = "Foutieve code! Probeer opnieuw. Noteer een X op het scorebord.";
     responseDiv.style.color = "white"; // Tekst wit
     responseDiv.style.fontWeight = "bold";
     responseDiv.style.backgroundColor = "red"; // Rood blokje
     responseDiv.style.padding = "10px"; // Ruimte binnen het blokje
     responseDiv.style.borderRadius = "5px"; // Afgeronde hoeken
+    }
 }
-        }
     </script>
 </body>
 </html>
+

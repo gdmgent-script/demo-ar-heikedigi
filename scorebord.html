@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Download scorebord</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #222;
+            color: white;
+            background-image: url('pics/background.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        h1 span {
+            display: block;  /* Zorgt ervoor dat de tekst in een nieuw blok komt */
+            margin-bottom: 10px; /* Ruimte tussen de regels */
+        }
+        button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+            width: 80%;
+            max-width: 300px;
+            background-color: #476b9d;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #4ec626;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <span>Is je scorebord helemaal vol?</span>
+        <span>Geen probleem, deze kun je met de link hieronder </span>
+        <span>gewoon downloaden en opnieuw afprinten</span>
+    </h1>
+    <!-- Link naar het PDF-bestand, bijvoorbeeld "document.pdf" -->
+    <a href="pics/scorebord.pdf" download>
+        <button>Download PDF scorebord</button>
+    </a>
+</body>
+</html>
