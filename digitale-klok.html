@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Camera Achtergrond Effect</title>
+  <title>Digitale klok</title>
   <style>
     body, html {
       margin: 0;
@@ -46,15 +46,17 @@
 
   <script>
     const video = document.getElementById('camera');
-
-    navigator.mediaDevices.getUserMedia({ video: true })
-      .then(stream => {
-        video.srcObject = stream;
-      })
-      .catch(err => {
-        console.error("Camera toegang geweigerd of niet beschikbaar:", err);
-        alert("Camera werkt niet of werd geblokkeerd.");
-      });
+  
+    navigator.mediaDevices.getUserMedia({
+      video: { facingMode: { ideal: "environment" } }  // Vraagt om de achtercamera
+    })
+    .then(stream => {
+      video.srcObject = stream;
+    })
+    .catch(err => {
+      console.error("Camera toegang geweigerd of niet beschikbaar:", err);
+      alert("Camera werkt niet of werd geblokkeerd.");
+    });
   </script>
 
 </body>
