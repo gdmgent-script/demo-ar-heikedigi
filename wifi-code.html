@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wifi-code Invoeren</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #222;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-image: url('pics/background.jpg');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .wifi-container {
+  background: rgba(255, 255, 255, 0.05); /* heel licht transparant wit */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px); /* wazig effect */
+  -webkit-backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+  width: 90%;
+  max-width: 350px;
+}
+
+    .wifi-icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+      color: #4ec626;
+    }
+
+    .network-name {
+      font-weight: bold;
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: none;
+    }
+
+    input {
+      background-color: white;
+      color: black;
+    }
+
+    .submit-button {
+      background-color: #476b9d;
+      color: white;
+      cursor: pointer;
+    }
+
+    .submit-button:hover {
+      background-color: #365782;
+    }
+
+    #response {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    img {
+      margin-top: 20px;
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wifi-container">
+    <div class="wifi-icon">📶</div>
+    <div class="network-name">Netwerk: Bureau professor</div>
+    <input type="password" id="wifiInput" placeholder="Voer wifi-wachtwoord in..." />
+    <button class="submit-button" onclick="checkWifiCode()">Verbind</button>
+    <div id="response"></div>
+  </div>
+
+  <script>
+    function checkWifiCode() {
+      const input = document.getElementById("wifiInput").value;
+      const responseDiv = document.getElementById("response");
+      responseDiv.innerHTML = ""; // reset eerst
+
+      if (input === "wF9B#74pZ!m8JkD2xL") {
+        responseDiv.textContent = "Draai kaart #18 om.";
+        responseDiv.style.backgroundColor = "#4ec626";
+        responseDiv.style.color = "white";
+        responseDiv.style.padding = "10px";
+        responseDiv.style.borderRadius = "5px";
+
+        const img = document.createElement('img');
+        img.src = "pics/binaire-code.png";  // pas eventueel aan
+        img.alt = "De binaire code moet ontcijferd worden.";
+        responseDiv.appendChild(img);
+      } else {
+        responseDiv.textContent = "Foutief wachtwoord! Probeer opnieuw.";
+        responseDiv.style.backgroundColor = "red";
+        responseDiv.style.color = "white";
+        responseDiv.style.padding = "10px";
+        responseDiv.style.borderRadius = "5px";
+      }
+    }
+  </script>
+
+</body>
+</html>
