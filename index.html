@@ -106,14 +106,11 @@
             // hetgeen wat de prorssor moet drinken om energie te krijgen
             { value: "koffie", response: "Draai kaart #27 om." },
 
-            // code die uit het briefje komt van in de automaat met het wifi wachtwoord
-            { value: "wF9B#74pZ!m8JkD2xL", response: "Draai kaart #18 om." }, 
-
             // code die je van het bruine oog te scannen krijgt
             { value: "het groene oog", response: "Je hebt de deur ontgrendeld, je kunt nu de bureau betreden. Lees de volgende kaart." }, 
-        
+
             // code die je ontcijferd met de binaire fiche
-            { value: "toegang"}, 
+            { value: "toegang", response: "Het luik opent, draai kaart #31 om." },
         ];
 
         function checkCode() {
@@ -154,15 +151,6 @@
                         const img = document.createElement('img');
                         img.src = "pics/wifi-wachtwoord.png";  // Zorg ervoor dat de afbeelding op de juiste locatie staat
                         img.alt = "Het wifi wachtwoord is wF9B#74pZ!m8JkD2xL";
-                        img.style.marginTop = "20px"; // Voeg wat ruimte boven de afbeelding toe
-                        img.style.maxWidth = "100%";  // Zorg ervoor dat de afbeelding niet te groot wordt
-                        responseDiv.appendChild(img);
-                    }
-                     // Voeg de afbeelding toe onder de tekst als de code correct is
-                     if (input === "wF9B#74pZ!m8JkD2xL") {  // Controleer of de code overeenkomt met de juiste code voor kaart 30
-                        const img = document.createElement('img');
-                        img.src = "pics/binaire-code";  // Zorg ervoor dat de afbeelding op de juiste locatie staat
-                        img.alt = "De binaire code moet oncijferd worden.";
                         img.style.marginTop = "20px"; // Voeg wat ruimte boven de afbeelding toe
                         img.style.maxWidth = "100%";  // Zorg ervoor dat de afbeelding niet te groot wordt
                         responseDiv.appendChild(img);
