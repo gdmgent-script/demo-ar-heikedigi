@@ -38,12 +38,12 @@
     right: 10px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 4px; /* een heel kleine afstand, pas aan naar 0px als je wil */
 }
 
 .bottom-right-button.small {
-    width: 170px; /* Alle knoppen exact even breed */
-    padding: 10px 20px; /* Zorgt voor evenveel blauw rondom de tekst */
+    width: 170px;
+    padding: 6px 10px; /* Iets compacter dan 10px 20px */
     font-size: 14px;
     background-color: #476b9d;
     color: white;
@@ -51,7 +51,8 @@
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
-    white-space: nowrap; /* Tekst blijft op 1 lijn */
+    white-space: nowrap;
+    margin: 0; /* ← deze lijn voorkomt extra ruimte rond de knoppen */
 }
         .submit-button {
             background-color: #476b9d;
