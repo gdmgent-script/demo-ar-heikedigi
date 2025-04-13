@@ -61,6 +61,18 @@
             cursor: pointer;
             border-radius: 5px;
         }
+        .forgot-password-button {
+            background-color: white;
+            color: #616161;  /* Grijze kleur voor de tekst */
+            font-size: 12px;  /* Kleinere tekst */
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            padding: 6px;
+            width: 80%;
+            max-width: 150px;  /* Kleinere breedte dan de "Indienen"-knop */
+            margin-top: 10px;  /* Ruimte tussen de knoppen */
+        }
         @media (max-width: 600px) {
             .bottom-right-button {
                 position: static;
@@ -87,6 +99,7 @@
         <h1>Voer de code in om verder te gaan</h1>
         <input type="text" id="codeInput" placeholder="Voer code in...">
         <button class="submit-button" onclick="checkCode()">Indienen</button>
+        <button class="forgot-password-button" onclick="window.location.href='wachtwoord-vergeten.html'">Wachtwoord vergeten</button>
         <div id="response"></div>
     </div>
     <div class="bottom-right-container">
