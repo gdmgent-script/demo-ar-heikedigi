@@ -68,13 +68,26 @@
                 max-width: 300px;
             }
         }
+        .center-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    z-index: 10; /* Zorgt ervoor dat dit boven andere elementen blijft */
+}
     </style>
 </head>
 <body>
-    <h1>Voer de code in om verder te gaan</h1>
-    <input type="text" id="codeInput" placeholder="Voer code in...">
-    <button class="submit-button" onclick="checkCode()">Indienen</button>
-    <div id="response"></div>
+    <div class="center-container">
+        <h1>Voer de code in om verder te gaan</h1>
+        <input type="text" id="codeInput" placeholder="Voer code in...">
+        <button class="submit-button" onclick="checkCode()">Indienen</button>
+        <div id="response"></div>
+    </div>
     <div class="bottom-right-container">
         <button class="bottom-right-button small" onclick="window.location.href='oogscanner.html'">Ga naar oogscanner</button>
         <button class="bottom-right-button small" onclick="window.location.href='digitale-klok.html'">Ga naar digitale klok</button>
