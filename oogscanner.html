@@ -1,11 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oogscanner</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oogscanner</title>
+
+  <!-- A-Frame + AR.js -->
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+    }
+
+    .top-right-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #476b9d;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      z-index: 9999; /* Houdt de knop bovenop */
+    }
+  </style>
 </head>
 <body>
-    
+  <button class="top-right-button" onclick="window.location.href='./index.html'">Terug naar home</button>
+
+  <a-scene
+    mindar-image="imageTargetSrc: ./markers/target-oog.mind"
+    color-space="sRGB"
+    renderer="colorManagement: true, physicallyCorrectLights"
+    vr-mode-ui="enabled: false"
+    device-orientation-permission-ui="enabled: false"
+    embedded>
+
+    <a-assets>
+      <img id="oog" src="./pics/antwoord-oogscanner.jpg">
+    </a-assets>
+
+    <a-camera 
+     position="0 0 0" 
+     look-controls="enabled: false"
+     camera="active: true; deviceId: environment">
+    </a-camera>
+    <a-entity light="type: ambient; intensity: 1"></a-entity>
+
+    <a-entity mindar-image-target="targetIndex: 0">
+      <a-image src="#oog" position="0 0 0" width="1" height="1"></a-image>
+    </a-entity>
+  </a-scene>
 </body>
 </html>
