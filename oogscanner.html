@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Oogscanner</title>
 
   <!-- A-Frame + AR.js -->
@@ -19,18 +19,18 @@
     }
 
     .top-right-button {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #476b9d;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-      z-index: 9999; /* Houdt de knop bovenop */
-    }
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #476b9d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 99999; /* Verhoog de z-index om ervoor te zorgen dat de knop bovenop blijft */
+}
   </style>
 </head>
 <body>
