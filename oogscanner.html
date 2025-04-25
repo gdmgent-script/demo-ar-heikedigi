@@ -34,32 +34,32 @@
   </style>
 </head>
 <body>
-  <button class="top-right-button" onclick="window.location.href='./index.html'">Terug naar home</button>
+  <button class="top-right-button" onclick="window.location.href='./index.html'">Code ingeven</button>
 
   <a-scene 
   mindar-image="imageTargetSrc: ./markers/target-icoon.mind; 
   autoStart: true; 
-  filterMinCF:0.0001; 
+  filterMinCF: 0.0001; 
   filterBeta: 0.001; 
   warmupTolerance: 0.15; 
   missTolerance: 3; 
   maxTrack: 1; 
   uiScanning: false; 
   uiLoading: false; 
-  video: {facingMode: 'environment'}"
+  video: {facingMode: 'environment', width: 1280, height: 720}" 
   color-space="sRGB"
   renderer="colorManagement: true, physicallyCorrectLights"
   vr-mode-ui="enabled: false"
   device-orientation-permission-ui="enabled: false"
   embedded>
-  
+
   <a-assets>
     <img id="oog" src="./pics/antwoord-oogscanner.jpg">
   </a-assets>
 
   <!-- Camera -->
   <a-camera 
-    position="0 0 2" 
+    position="0 0 5" 
     look-controls="enabled: false"
     camera="active: true; deviceId: environment; fov: 90;">
   </a-camera>
