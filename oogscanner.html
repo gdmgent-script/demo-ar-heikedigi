@@ -36,24 +36,34 @@
 <body>
   <button class="top-right-button" onclick="window.location.href='./index.html'">Terug naar home</button>
 
-  <a-scene
-  mindar-image="imageTargetSrc: ./markers/target-icoon.mind; autoStart: true; uiScanning: false; uiLoading: false; video: facingMode: environment"
+  <a-scene 
+  mindar-image="imageTargetSrc: ./markers/target-icoon.mind; 
+  autoStart: true; 
+  filterMinCF:0.0001; 
+  filterBeta: 0.001; 
+  warmupTolerance: 0.15; 
+  missTolerance: 3; 
+  maxTrack: 1; 
+  uiScanning: false; 
+  uiLoading: false; 
+  video: {facingMode: 'environment'}"
   color-space="sRGB"
   renderer="colorManagement: true, physicallyCorrectLights"
   vr-mode-ui="enabled: false"
   device-orientation-permission-ui="enabled: false"
   embedded>
-
+  
   <a-assets>
     <img id="oog" src="./pics/antwoord-oogscanner.jpg">
   </a-assets>
 
+  <!-- Camera -->
   <a-camera 
     position="0 0 2" 
-    look-controls="enabled: false" 
-    camera="active: true; deviceId: environment; fov: 80">
+    look-controls="enabled: false"
+    camera="active: true; deviceId: environment; fov: 90;">
   </a-camera>
-  
+
   <a-entity light="type: ambient; intensity: 1"></a-entity>
 
   <a-entity mindar-image-target="targetIndex: 0">
