@@ -34,10 +34,23 @@
       z-index: 1;
       pointer-events: none;
     }
+    .top-right-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #476b9d;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            z-index: 9999; /* Houdt de knop bovenop */
+        }
   </style>
 </head>
 <body>
-
+  <button class="top-right-button" onclick="window.location.href='./index.html'">Code ingeven</button>
   <!-- Camera-feed -->
   <video id="camera" autoplay playsinline></video>
 
