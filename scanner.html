@@ -7,7 +7,7 @@
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <style>
-          body, html {
+        body, html {
             margin: 0;
             padding: 0;
             overflow: hidden;
@@ -33,77 +33,73 @@
 <body>
     <button class="top-right-button" onclick="window.location.href='./index.html'">Code ingeven</button>
     <a-scene
-    mindar-image="imageTargetSrc: ./markers/target-icoon.mind; autoStart: true; filterMinCF:0.0001; filterBeta: 0.001; warmupTolerance: 0.15; missTolerance: 3; maxTrack: 1; uiScanning: false; uiLoading: false; video: {deviceId: environment}"
-    color-space="sRGB"
-    renderer="colorManagement: true, physicallyCorrectLights"
-    vr-mode-ui="enabled: false"
-    device-orientation-permission-ui="enabled: false"
-    embedded>
-  
-    <a-assets>
-      <img id="uitschakelcode1" src="pics/uitschakelcode1.png">
-      <img id="uitschakelcode2" src="pics/uitschakelcode2.png">
-      <img id="uitschakelcode3" src="pics/uitschakelcode3.png">
-      <img id="uitschakelcode4" src="pics/uitschakelcode4.png">
-      <img id="uitschakelcode5" src="pics/uitschakelcode5.png">
-      <img id="uitschakelcode6" src="pics/uitschakelcode6.png">
-      <img id="uitschakelcode7" src="pics/uitschakelcode7.png">
-      <img id="uitschakelcode8" src="pics/uitschakelcode8.png">
-      <a-asset-item id="sleutelhanger" src="pics/sleutelhanger.gltf"></a-asset-item>
-    </a-assets>
-  
-    <a-camera 
-     position="0 0 0" 
-     look-controls="enabled: false"
-     camera="active: true; deviceId: environment">
-    </a-camera>
-    <a-entity light="type: ambient; intensity: 1"></a-entity>
-  
-    <!-- MARKER 1 -->
-    <a-entity mindar-image-target="targetIndex: 1">
-      <a-image src="#uitschakelcode6" position="0 0 0" width="1" height="1"></a-image>
-    </a-entity>
-  
-    <!-- MARKER 2 -->
-    <a-entity mindar-image-target="targetIndex: 2">
-      <a-image src="#uitschakelcode5" position="0 0 0" width="1" height="1"></a-image>
-    </a-entity>
-  
-    <!-- MARKER 3 -->
-    <a-entity mindar-image-target="targetIndex: 3">
-      <a-image src="#uitschakelcode7" position="0 0 0" width="1" height="1"></a-image>
-    </a-entity>
-  
-    <!-- MARKER 4 -->
-    <a-entity mindar-image-target="targetIndex: 4">
-      <a-image src="#uitschakelcode3" position="0 0 0" width="1" height="1"></a-image>
-    </a-entity>
-  
-    <!-- MARKER 5 -->
-    <a-entity mindar-image-target="targetIndex: 5">
-      <a-image src="#uitschakelcode4" position="0 0 0" width="1" height="1"></a-image>
-    </a-entity>
-  
-    <!-- MARKER 6 -->
-    <a-entity mindar-image-target="targetIndex: 6">
-      <a-image src="#uitschakelcode1" position="0 0 0" width="1" height="1"></a-image>
-    </a-entity>
-  
-    <!-- MARKER 7 -->
-    <a-entity mindar-image-target="targetIndex: 7">
-      <a-image src="#uitschakelcode8" position="0 0 0" width="1" height="1"></a-image>
-    </a-entity>
-  
-    <!-- MARKER 8 -->
-    <a-entity mindar-image-target="targetIndex: 8">
-      <a-image src="#uitschakelcode2" position="0 0 0" width="1" height="1"></a-image>
-    </a-entity>
+        mindar-image="imageTargetSrc: ./markers/target-icoon1.mind; autoStart: true; filterMinCF:0.0001; filterBeta: 0.001; warmupTolerance: 0.15; missTolerance: 3; maxTrack: 1; uiScanning: false; uiLoading: false; video: {deviceId: environment}"
+        color-space="sRGB"
+        renderer="colorManagement: true, physicallyCorrectLights"
+        vr-mode-ui="enabled: false"
+        device-orientation-permission-ui="enabled: false"
+        embedded>
 
-    <!-- MARKER 9 - Sleutelhanger -->
-    <a-entity mindar-image-target="targetIndex: 9">
-        <a-gltf-model src="#sleutelhanger" position="0 0 0" scale="0.1 0.1 0.1" rotation="0 180 0"></a-gltf-model>
-    </a-entity>
-  
-  </a-scene>
+        <a-assets>
+            <img id="uitschakelcode1" src="pics/uitschakelcode1.png">
+            <img id="uitschakelcode2" src="pics/uitschakelcode2.png">
+            <img id="uitschakelcode3" src="pics/uitschakelcode3.png">
+            <img id="uitschakelcode4" src="pics/uitschakelcode4.png">
+            <img id="uitschakelcode5" src="pics/uitschakelcode5.png">
+            <img id="uitschakelcode6" src="pics/uitschakelcode6.png">
+            <img id="uitschakelcode7" src="pics/uitschakelcode7.png">
+            <img id="uitschakelcode8" src="pics/uitschakelcode8.png">
+            <a-asset-item id="sleutelhanger" src="pics/sleutelhanger.gltf"></a-asset-item>
+        </a-assets>
+
+        <a-camera position="0 0 0" look-controls="enabled: false" camera="active: true; deviceId: environment"></a-camera>
+        <a-entity light="type: ambient; intensity: 1"></a-entity>
+
+        <!-- MARKER 1 -->
+        <a-entity mindar-image-target="targetIndex: 1">
+            <a-image src="#uitschakelcode6" position="0 0 0" width="1" height="1"></a-image>
+        </a-entity>
+
+        <!-- MARKER 2 -->
+        <a-entity mindar-image-target="targetIndex: 2">
+            <a-image src="#uitschakelcode5" position="0 0 0" width="1" height="1"></a-image>
+        </a-entity>
+
+        <!-- MARKER 3 -->
+        <a-entity mindar-image-target="targetIndex: 3">
+            <a-image src="#uitschakelcode7" position="0 0 0" width="1" height="1"></a-image>
+        </a-entity>
+
+        <!-- MARKER 4 -->
+        <a-entity mindar-image-target="targetIndex: 4">
+            <a-image src="#uitschakelcode3" position="0 0 0" width="1" height="1"></a-image>
+        </a-entity>
+
+        <!-- MARKER 5 -->
+        <a-entity mindar-image-target="targetIndex: 5">
+            <a-image src="#uitschakelcode4" position="0 0 0" width="1" height="1"></a-image>
+        </a-entity>
+
+        <!-- MARKER 6 -->
+        <a-entity mindar-image-target="targetIndex: 6">
+            <a-image src="#uitschakelcode1" position="0 0 0" width="1" height="1"></a-image>
+        </a-entity>
+
+        <!-- MARKER 7 -->
+        <a-entity mindar-image-target="targetIndex: 7">
+            <a-image src="#uitschakelcode8" position="0 0 0" width="1" height="1"></a-image>
+        </a-entity>
+
+        <!-- MARKER 8 -->
+        <a-entity mindar-image-target="targetIndex: 8">
+            <a-image src="#uitschakelcode2" position="0 0 0" width="1" height="1"></a-image>
+        </a-entity>
+
+        <!-- MARKER 9 - Sleutelhanger -->
+        <a-entity mindar-image-target="targetIndex: 9">
+            <a-gltf-model src="#sleutelhanger" position="0 0 0" scale="0.1 0.1 0.1" rotation="0 180 0"></a-gltf-model>
+        </a-entity>
+
+    </a-scene>
 </body>
 </html>
