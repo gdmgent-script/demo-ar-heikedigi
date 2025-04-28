@@ -12,9 +12,13 @@
           height: 100%;
           width: 100%;
           font-family: 'Courier New', Courier, monospace;
-            font-size: 16px; /* Pas dit aan voor een andere lettergrootte */
-            background-color: #011641; /* Pas deze kleur aan voor de achtergrondkleur */
-            color: #edebee; /* Pas deze kleur aan voor de tekstkleur */
+          font-size: 16px; /* Pas dit aan voor een andere lettergrootte */
+          background-color: #011641; /* Pas deze kleur aan voor de achtergrondkleur */
+          color: #edebee; /* Pas deze kleur aan voor de tekstkleur */
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
         }
     
         .top-right-button {
@@ -34,8 +38,14 @@
         .hint-text {
             color: #edebee; 
             font-weight: bold;
+            margin-top: 60px; /* Maakt ruimte voor de knop */
+            padding: 0 20px;
         }
-      </style>
+      
+        .hint-text br {
+            margin-bottom: 10px; /* Extra ruimte tussen de hints */
+        }
+    </style>
 </head>
 <body>
     <button class="top-right-button" onclick="window.location.href='./index.html'">Code ingeven</button>
@@ -59,6 +69,6 @@
       9: K!JK €EΝ5 G0oD N^AR H3T B()RD<br>
       28: B€§T^AT €R G€€Ν KN()P '0()G§C^NN€R' OP D€ W€B5!T3?<br>
       15: K!JK €EΝ5 G0oD N^AR HET B()RD<br>
-  </div>
+    </div>
 </body>
 </html>
