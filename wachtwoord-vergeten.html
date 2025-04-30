@@ -12,9 +12,9 @@
           height: 100%;
           width: 100%;
           font-family: 'Courier New', Courier, monospace;
-          font-size: 16px; /* Pas dit aan voor een andere lettergrootte */
-          background-color: #011641; /* Pas deze kleur aan voor de achtergrondkleur */
-          color: #edebee; /* Pas deze kleur aan voor de tekstkleur */
+          font-size: 16px;
+          background-color: #011641;
+          color: #edebee;
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
@@ -32,7 +32,7 @@
           border: none;
           cursor: pointer;
           border-radius: 5px;
-          z-index: 9999; /* Houdt de knop bovenop */
+          z-index: 9999;
         }
       
         .hint-text {
@@ -41,15 +41,19 @@
           margin-top: 60px;
           padding: 0 10px;
           margin-bottom: 15px;
-          white-space: normal; /* Zorg ervoor dat de tekst alleen op spaties wordt gesplitst */
-          word-wrap: break-word; /* Tekst breekt alleen waar nodig */
+          white-space: normal;
+          word-wrap: break-word;
         }
-      
+
+        /* Toegevoegde klasse voor extra ruimte */
+        .ruimte-onder {
+          margin-bottom: 40px; /* Pas dit aan voor meer/minder ruimte */
+        }
     </style>
 </head>
 <body>
     <button class="top-right-button" onclick="window.location.href='./index.html'">Code ingeven</button>
-    <div class="hint-text">
+    <div class="hint-text ruimte-onder">
       18: H€B J€ Μ!§CHI€Ν €€Ν V00RW€RP D!€ K^Ν H€LP€Ν?<br>
       23: W^T Μ()€T J€ PR€C!€§ D()€Ν Μ€T D€ 5L3UT3LH^NG3R?<br>
       16: !5 D!T D^T^C€ΝTRUM Ν!€T §UP€R B€V€!LGD Μ€T C^M€RA'5?<br>
