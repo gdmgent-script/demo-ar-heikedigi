@@ -5,21 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wachtwoord vergeten</title>
     <style>
-        body, html {
+       body, html {
           margin: 0;
           padding: 7px;
-          overflow-y: auto; /* zorgt dat je kunt scrollen als het nodig is */
-          height: 100%;
-          width: 100%;
+          height: 100vh;
+          width: 100vw;
           font-family: 'Courier New', Courier, monospace;
           font-size: 16px;
           background-color: #011641;
           color: #edebee;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          align-items: flex-start;
-        }
+          overflow-y: auto; /* laat verticaal scrollen toe */
+          -webkit-overflow-scrolling: touch; /* soepel scrollen op iOS */
+          display: block; /* voorkomt flex-bug op mobiel met overflow */
+}
     
         .top-right-button {
           position: fixed;
