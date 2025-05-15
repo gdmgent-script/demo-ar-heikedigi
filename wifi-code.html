@@ -104,31 +104,38 @@
   </div>
 
   <script>
-    function checkWifiCode() {
-      const input = document.getElementById("wifiInput").value;
-      const responseDiv = document.getElementById("response");
-      responseDiv.innerHTML = ""; // reset eerst
+  function checkWifiCode() {
+    const input = document.getElementById("wifiInput").value.trim(); // trim spaties
+    const responseDiv = document.getElementById("response");
+    responseDiv.innerHTML = ""; // reset eerst
 
-      if (input === "wF9B#74pZ!m8JkD2xL") {
-        responseDiv.textContent = "Draai kaart #30 om.";
-        responseDiv.style.backgroundColor = "#4ec626";
-        responseDiv.style.color = "white";
-        responseDiv.style.padding = "10px";
-        responseDiv.style.borderRadius = "5px";
+    const validPasswords = [
+      "wF9B#74pZ!m8JkD2xL",
+      "wf9b#74pz!m8jkdZxl", 
+      "wF9B#24p2!m8JkD2xL", 
+      "wF9B#24p2!m8JkDZxL", 
+    ];
 
-        const img = document.createElement('img');
-        img.src = "pics/binaire-code.png";  // pas eventueel aan
-        img.alt = "De binaire code moet ontcijferd worden.";
-        responseDiv.appendChild(img);
-      } else {
-        responseDiv.textContent = "Foutief wachtwoord! Probeer opnieuw.";
-        responseDiv.style.backgroundColor = "red";
-        responseDiv.style.color = "white";
-        responseDiv.style.padding = "10px";
-        responseDiv.style.borderRadius = "5px";
-      }
+    if (validPasswords.includes(input)) {
+      responseDiv.textContent = "Draai kaart #30 om.";
+      responseDiv.style.backgroundColor = "#4ec626";
+      responseDiv.style.color = "white";
+      responseDiv.style.padding = "10px";
+      responseDiv.style.borderRadius = "5px";
+
+      const img = document.createElement('img');
+      img.src = "pics/binaire-code.png";  // pas eventueel aan
+      img.alt = "De binaire code moet ontcijferd worden.";
+      responseDiv.appendChild(img);
+    } else {
+      responseDiv.textContent = "Foutief wachtwoord! Probeer opnieuw.";
+      responseDiv.style.backgroundColor = "red";
+      responseDiv.style.color = "white";
+      responseDiv.style.padding = "10px";
+      responseDiv.style.borderRadius = "5px";
     }
-  </script>
+  }
+</script>
 
 </body>
 </html>
