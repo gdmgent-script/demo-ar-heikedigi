@@ -34,8 +34,10 @@
 <body>
     <button class="top-right-button" onclick="window.location.href='./index.html'">Code ingeven</button>
     <a-scene
-    mindar-image="imageTargetSrc: ./markers/target-multiple.mind;"
-      color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
+        mindar-image="imageTargetSrc: ./markers/target-multiple.mind; maxTrack: 8;"
+        color-space="sRGB"
+        renderer="colorManagement: true, physicallyCorrectLights"
+        vr-mode-ui="enabled: false"
         device-orientation-permission-ui="enabled: false"
     >
 
