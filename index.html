@@ -144,7 +144,7 @@
             { value: "68941", response: "Deze code kan inderdaad gebruikt worden om de kluis te openen, draai kaart #23 om en bekijk de inhoud van de kluis." },
 
             // code die in de kluis staat
-            { value: "processor", response: "Lees de volgende kaart en bekijk de sleutel die je hebt vrijgespeeld. Je hebt weer eens super moeilijke code opgelost, veeg een X uit bij je fouten." },
+            { value: "processor", response: "Lees de volgende kaart en bekijk de sleutel die je hebt vrijgespeeld." },
 
             //  juiste code uit de automaat sudoku
             { value: "a1", response: "Je hebt de wifi-code vrijgespeeld, schrijf deze op dit kan handig zijn." }, 
@@ -213,6 +213,15 @@
                     }
                      // Voeg de afbeelding toe onder de tekst als de code correct is
                      if (input === "a1") {  // Controleer of de code overeenkomt met de juiste code voor kaart 25
+                        const img = document.createElement('img');
+                        img.src = "pics/wifi-wachtwoord.png";  // Zorg ervoor dat de afbeelding op de juiste locatie staat
+                        img.alt = "Het wifi wachtwoord is wF9B#74pZ!m8JkD2xL";
+                        img.style.marginTop = "20px"; // Voeg wat ruimte boven de afbeelding toe
+                        img.style.maxWidth = "100%";  // Zorg ervoor dat de afbeelding niet te groot wordt
+                        responseDiv.appendChild(img);
+                    }
+                    // Voeg de afbeelding toe onder de tekst als de code correct is
+                     if (input === "A1") {  // Controleer of de code overeenkomt met de juiste code voor kaart 25
                         const img = document.createElement('img');
                         img.src = "pics/wifi-wachtwoord.png";  // Zorg ervoor dat de afbeelding op de juiste locatie staat
                         img.alt = "Het wifi wachtwoord is wF9B#74pZ!m8JkD2xL";
