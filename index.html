@@ -214,6 +214,15 @@
                         img.style.maxWidth = "100%";  // Zorg ervoor dat de afbeelding niet te groot wordt
                         responseDiv.appendChild(img);
                     }
+                    // Voeg de afbeelding toe onder de tekst als de code correct is
+                     if (input === "4395") {  // Controleer of de code overeenkomt met de juiste code voor kaart 18
+                        const img = document.createElement('img');
+                        img.src = "pics/meeting-alert-agenda.png";  // Zorg ervoor dat de afbeelding op de juiste locatie staat
+                        img.alt = "Meeting alert agenda, meeting room 3";
+                        img.style.marginTop = "20px"; // Voeg wat ruimte boven de afbeelding toe
+                        img.style.maxWidth = "100%";  // Zorg ervoor dat de afbeelding niet te groot wordt
+                        responseDiv.appendChild(img);
+                    }
                      // Voeg de afbeelding toe onder de tekst als de code correct is
                      if (input === "a1") {  // Controleer of de code overeenkomt met de juiste code voor kaart 25
                         const img = document.createElement('img');
