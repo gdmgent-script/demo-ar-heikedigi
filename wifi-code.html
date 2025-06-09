@@ -22,16 +22,16 @@
     }
 
     .wifi-container {
-  background: rgba(255, 255, 255, 0.05); /* heel licht transparant wit */
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px); /* wazig effect */
-  -webkit-backdrop-filter: blur(10px);
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 0 30px rgba(0,0,0,0.6);
-  width: 90%;
-  max-width: 350px;
-}
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.6);
+      width: 90%;
+      max-width: 350px;
+    }
 
     .wifi-icon {
       font-size: 40px;
@@ -78,19 +78,20 @@
       margin-top: 20px;
       max-width: 100%;
     }
+
     .top-right-button {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #476b9d;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            z-index: 9999; /* Houdt de knop bovenop */
-        }
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #476b9d;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      z-index: 9999;
+    }
   </style>
 </head>
 <body>
@@ -104,46 +105,32 @@
   </div>
 
   <script>
-  function checkWifiCode() {
-    const input = document.getElementById("wifiInput").value.trim(); // trim spaties
-    const responseDiv = document.getElementById("response");
-    responseDiv.innerHTML = ""; // reset eerst
+    function checkWifiCode() {
+      const input = document.getElementById("wifiInput").value.trim();
+      const responseDiv = document.getElementById("response");
+      responseDiv.innerHTML = ""; // reset
 
-    const validPasswords = [
-      "wF9B#74pZ!m8JkD2xL",
-      "wF9B#74pZ!m8JkDZxL", 
-      "wF9B#24p2!m8JkD2xL", 
-      "wF9B#24p2!m8JkDZxL", 
-      "wF9B#14p2!m8JkDZxL",
-      "wF9B#14p2!m8JkD2xL",
-      "wF9B#74vZ!m8JkD2xL",
-      "wF9B#74vZ!m8JkDZxL", 
-      "wF9B#24v2!m8JkD2xL", 
-      "wF9B#24v2!m8JkDZxL", 
-      "wF9B#14v2!m8JkDZxL",
-      "wF9B#14v2!m8JkD2xL",
-    ];
+      const correctPassword = "wF9B#74pZ!m8JkD2xL";
 
-    if (validPasswords.includes(input)) {
-      responseDiv.textContent = "Draai kaart #30 om.";
-      responseDiv.style.backgroundColor = "#4ec626";
-      responseDiv.style.color = "white";
-      responseDiv.style.padding = "10px";
-      responseDiv.style.borderRadius = "5px";
+      if (input === correctPassword) {
+        responseDiv.textContent = "Draai kaart #30 om.";
+        responseDiv.style.backgroundColor = "#4ec626";
+        responseDiv.style.color = "white";
+        responseDiv.style.padding = "10px";
+        responseDiv.style.borderRadius = "5px";
 
-      const img = document.createElement('img');
-      img.src = "pics/binaire-code.png";  // pas eventueel aan
-      img.alt = "De binaire code moet ontcijferd worden.";
-      responseDiv.appendChild(img);
-    } else {
-      responseDiv.textContent = "Foutief wachtwoord! Probeer opnieuw.";
-      responseDiv.style.backgroundColor = "red";
-      responseDiv.style.color = "white";
-      responseDiv.style.padding = "10px";
-      responseDiv.style.borderRadius = "5px";
+        const img = document.createElement('img');
+        img.src = "pics/binaire-code.png";
+        img.alt = "De binaire code moet ontcijferd worden.";
+        responseDiv.appendChild(img);
+      } else {
+        responseDiv.textContent = "Foutief wachtwoord! Probeer opnieuw.";
+        responseDiv.style.backgroundColor = "red";
+        responseDiv.style.color = "white";
+        responseDiv.style.padding = "10px";
+        responseDiv.style.borderRadius = "5px";
+      }
     }
-  }
-</script>
-
+  </script>
 </body>
 </html>
